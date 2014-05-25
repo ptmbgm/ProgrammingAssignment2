@@ -1,9 +1,15 @@
+## Put comments here that give an overall description of what your
+## functions do
+
 ##The following code modifies the code given as part of Programming
 ##Assignment 2 of the R Programming Coursera offering.  The code 
 ##includes two functions which allow for cacheing the inverse of 
 ##a matrix.  The code requires the "Matrix" library.
 
 library(Matrix)
+
+## Write a short comment describing this function
+
 
 ##The first function generates a list which does four things: set a matrix,
 ##get a matrix, set an inverse of the given matrix, get the inverse
@@ -38,8 +44,16 @@ makeCacheMatrix <- function(x = matrix()) {
              getinverse = getinverse)
 }
 
-cachesolve <- function(x, ...) {
-        
+## Write a short comment describing this function
+
+##The second function checks to see whether the inverse has been computed,
+##If so it returns the cached value.  If not, it computes the inverse and returns
+##its value.
+
+
+cacheSolve <- function(x, ...) {
+        ## Return a matrix that is the inverse of 'x'
+
 ##Assign the current value of inverse
 
 	  I <- x$getinverse() 
@@ -72,7 +86,7 @@ cachesolve <- function(x, ...) {
 
 library(Matrix)
 
-##The following generates a 10x10 matrix qith entries from 1 to 100
+##The following generates a 10x10 matrix with entries from 1 to 100
 
 M<- matrix(1:100, 10,10)
 
@@ -90,8 +104,11 @@ DI<- solve(D)
 
 M<- makeCacheMatrix(D)
 
-cachesolve(M)
+cacheSolve(M)
 
-##Note that DI and cachesolve(M)coincide.
+##Note that DI and cacheSolve(M)coincide.
+
+
+
 
 
